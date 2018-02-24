@@ -111,15 +111,17 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
         beforeEach( function(done){
-            loadFeed(function(){
+            loadFeed(1,function(){
             done();
         });
            });
 
            it('content changes when a new feed is loaded', function(){
-            allFeeds.forEach(function(e){
-                expect(e.name).toBeDefined();
-            });
+            var firstfeed = allFeeds[0];
+            var secondfeed = allFeeds[1];
+            //console.log(firstfeed);
+            //console.log(secondfeed);
+            expect(firstfeed.name).not.toEqual(secondfeed.name);
         });
     });
 }());
