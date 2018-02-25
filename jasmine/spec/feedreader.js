@@ -91,11 +91,11 @@ $(function() {
            });
 
            it('content changes when a new feed is loaded', function(){
-            var firstfeed = allFeeds[0];
-            var secondfeed = allFeeds[1];
+            var firstfeed = allFeeds[0].html();
+            var secondfeed = allFeeds[1].html();
             //console.log(firstfeed);
             //console.log(secondfeed);
-            expect(firstfeed.name).not.toEqual(secondfeed.name);
+            expect(firstfeed).not.toEqual(secondfeed);
         });
     });
 }());
