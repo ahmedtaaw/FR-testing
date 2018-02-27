@@ -11,5 +11,6 @@ a feed reader app, uses Fead reader test cases to make sure of:
 
 How To Run?
 ================================
-you will need "feedreader.js" the spec file that Jasmine will read and contains all of the tests that will be run against your application.
+-The user also has to open index.html in a browser.
+-The user will need "feedreader.js" the spec file that Jasmine will read and contains all of the tests that will be run against the user application.
  
