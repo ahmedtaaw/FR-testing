@@ -74,7 +74,7 @@ $(function () {
             });
         });
         it('should be at least one feed', function () {
-            var entry = $('.entry');
+            var entry = $('.feed .entry');
             //console.log("feeds.length",feeds.length);
             expect(entry.length).toBeGreaterThan(0);
 
@@ -87,19 +87,21 @@ $(function () {
          */
         beforeEach(function (done) {
             loadFeed(0, function () {
+                console.log('loadFeed is finished')
                 done();
             });
         });
 
-        it('content changes when a new feed is loaded', function () {
+        it('content changes when a new feed is loaded', function (done) {
             //console.log($('.feed a')[0]);
             loadFeed(1, function () {
+                var firstfeed = $('.feed a:nth-child(1)').html();
+                var secondfeed = $('.feed a:nth-child(2)').html();
+                expect(firstfeed).not.toEqual(secondfeed);
+                done();
             });
-            var firstfeed = $('.feed a:nth-child(1)').html();
-            var secondfeed = $('.feed a:nth-child(2)').html();
-            //console.log(firstfeed);
-            //console.log(secondfeed);
-            expect(firstfeed).not.toEqual(secondfeed);
+            
         });
+ 
     });
 }());
