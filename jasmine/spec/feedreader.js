@@ -87,7 +87,7 @@ $(function () {
          */
         beforeEach(function (done) {
             loadFeed(0, function () {
-                console.log('loadFeed is finished')
+                console.log('loadFeed is finished');
                 done();
             });
         });
