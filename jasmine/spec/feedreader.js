@@ -85,9 +85,12 @@ $(function () {
         /* 
          *check if content changes when a new feed is loaded
          */
+        var firstfeed;
+        var secondfeed;
         beforeEach(function (done) {
             loadFeed(0, function () {
                 console.log('loadFeed is finished');
+                 firstfeed = $('.feed').html();
                 done();
             });
         });
@@ -95,8 +98,7 @@ $(function () {
         it('content changes when a new feed is loaded', function (done) {
             //console.log($('.feed a')[0]);
             loadFeed(1, function () {
-                var firstfeed = $('.feed a:nth-child(1)').html();
-                var secondfeed = $('.feed a:nth-child(2)').html();
+                 secondfeed = $('.feed').html();
                 expect(firstfeed).not.toEqual(secondfeed);
                 done();
             });
